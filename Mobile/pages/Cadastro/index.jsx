@@ -16,12 +16,14 @@ export default function Cadastro({navigation}) {
                     <Image source={{uri:'./../../assets/google.png'}} style={{width:10, height:10}} />
                 </View>
             </TouchableOpacity>
+            <View style={styles.botoens}>
             <TouchableOpacity style={styles.button_deCima} onPress={()=> {navigation.navigate("google")}} activeOpacity={0.7}>
-            <Text style={styles.textButton}>facebook</Text>
+            <Text style={styles.textButtonFacebook}>facebook</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button_deCima} onPress={() =>{navigation.navigate("facebook")}} activeOpacity={0.7}> 
-            <Text style={styles.textButton}>Google</Text>
+            <TouchableOpacity style={styles.button_deCima2} onPress={() =>{navigation.navigate("facebook")}} activeOpacity={0.7}> 
+            <Text style={styles.textButtonGoogle}>Google</Text>
             </TouchableOpacity>
+            </View>
             <View style={styles.linha} >
                 <Text style={styles.texto}>
                     Já tenho </Text><TouchableOpacity ><Text style={styles.textoLink}>conta</Text></TouchableOpacity>
@@ -29,6 +31,7 @@ export default function Cadastro({navigation}) {
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <View style={styles.linhaDesenhada}></View><Text style={styles.texto}>Ou</Text><View style={styles.linhaDesenhada}></View>
             </View>
+            <View style={styles.container2}>
             <View>
                 <Text style={styles.texto}>Email:</Text>
                 <TextInput style={styles.input} />
@@ -43,7 +46,7 @@ export default function Cadastro({navigation}) {
                 <Text style={styles.texto}>Sala:</Text>
                 <TextInput style={styles.input} />
             </View>
-            
+            <View style={styles.container3}> 
             <View>
             <CheckBox
                  value={isSelected}
@@ -54,10 +57,14 @@ export default function Cadastro({navigation}) {
                         Eu li e concordo com os termos de serviço e com a politica da bibliotech
                 </Text>
             </View>
+            <View style={styles.container4}> 
             <View>
             <TouchableOpacity style={styles.button_entrar} onPress={()=> {navigation.navigate("Cadastro")}} activeOpacity={0.7}  >
             <Text style={styles.textButton}>Entrar</Text>
           </TouchableOpacity>
+            </View>
+            </View>
+            </View>
             </View>
         </View>
 
@@ -77,11 +84,36 @@ const styles = StyleSheet.create(
             justifyContent: "space-around",
             paddingTop: 20,
         },
+        container2: {
+            backgroundColor: "#000000",
+            alignItems: "center",
+            justifyContent: "space-around",
+            paddingTop: 30,
+        },
+        container3: {
+            backgroundColor: "#000000",
+            alignItems: "center",
+            justifyContent: "space-around",
+            paddingTop: 50,
+        },
+        container4: {
+            backgroundColor: "#000000",
+            alignItems: "center",
+            justifyContent: "space-around",
+            paddingTop: 48,
+        },
+
+        botoens: {
+       flexDirection: "row",
+       marginBottom: 10
+     
+        },
         texto: {
-            color: 'white'
+            color: 'white',
         },
         texto2: {
-            color: "#36A9A9"
+            color: "#36A9A9",
+            marginLeft: 20
         },
         linha: {
             flexDirection: "row",
@@ -96,7 +128,16 @@ const styles = StyleSheet.create(
             height: alturaTela * 0.055
         },
         button_deCima: {
-     
+            borderRadius: 100,
+            borderWidth: 1, 
+            borderColor: "blue",
+            margin: 3
+        },
+        button_deCima2: {
+            borderRadius: 100,
+            borderWidth: 1, 
+            borderColor: "red",
+            margin: 3
         },
         button_entrar: {
             alignItems: "center",
@@ -109,12 +150,23 @@ const styles = StyleSheet.create(
             borderRadius: 100,
           },
           checkbox: {
-          
+           width: 20,
+           marginBottom: -20
           },
           textButton: {
             fontSize: alturaTela/40,
             padding: 5,
             color: "#36A9A9",
+          },
+          textButtonFacebook: {
+            fontSize: alturaTela/40,
+            padding: 5,
+            color: "blue",
+          },
+          textButtonGoogle: {
+            fontSize: alturaTela/40,
+            padding: 5,
+            color: "red",
           },
         linhaDesenhada: {
             borderBottomWidth: 1,
